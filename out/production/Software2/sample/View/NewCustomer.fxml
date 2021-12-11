@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="432.0" prefWidth="346.0" style="-fx-background-color: lightcyan;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.AddCustomersController">
+   <children>
+      <VBox layoutX="167.0" layoutY="83.0" spacing="20.0">
+         <children>
+            <TextField fx:id="name" />
+            <TextField fx:id="address" />
+            <TextField fx:id="postal" />
+            <TextField fx:id="phone" />
+            <ComboBox fx:id="countryCombo" onAction="#countryHandler" prefWidth="150.0" />
+            <ComboBox fx:id="divisionCombo" prefWidth="150.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="29.0" layoutY="83.0" prefHeight="295.0" prefWidth="118.0" spacing="20.0">
+         <children>
+            <Label text="Name">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Address">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Postal Code">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Phone Number">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Country">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Division">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Button fx:id="add" layoutX="167.0" layoutY="367.0" mnemonicParsing="false" onAction="#addHandler" text="Save">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <Button fx:id="exit" layoutX="257.0" layoutY="367.0" mnemonicParsing="false" onAction="#exitHandler" text="Exit">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="101.0" layoutY="26.0" text="New Customer">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

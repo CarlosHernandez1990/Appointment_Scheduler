@@ -1,0 +1,332 @@
+<html>
+<head>
+<title>Appointments.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #629755; font-weight: bold; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Appointments.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">sample.Model</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.sql.Timestamp</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.time.LocalDateTime</span><span class="s0">;</span>
+
+<span class="s2">/**</span>
+ <span class="s2">* This class contains the variables and methods used to manage appointments.</span>
+ <span class="s2">*/</span>
+
+<span class="s0">public class </span><span class="s1">Appointments {</span>
+    <span class="s0">int </span><span class="s1">appointmentID</span><span class="s0">;</span>
+    <span class="s1">String title</span><span class="s0">;</span>
+    <span class="s1">String description</span><span class="s0">;</span>
+    <span class="s1">String location</span><span class="s0">;</span>
+    <span class="s1">String type</span><span class="s0">;</span>
+    <span class="s1">LocalDateTime start</span><span class="s0">;</span>
+    <span class="s1">LocalDateTime end</span><span class="s0">;</span>
+    <span class="s1">LocalDateTime createdDate</span><span class="s0">;</span>
+    <span class="s1">String createdBy</span><span class="s0">;</span>
+    <span class="s1">Timestamp lastUpdate</span><span class="s0">;</span>
+    <span class="s1">String lastUpdatedBy</span><span class="s0">;</span>
+    <span class="s0">int </span><span class="s1">customerID</span><span class="s0">;</span>
+    <span class="s0">int </span><span class="s1">userID</span><span class="s0">;</span>
+    <span class="s0">int </span><span class="s1">contactID</span><span class="s0">;</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This is the constructor of the appointment class.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">appointmentID This is the ID of an appointment.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">title This is the title of an appointment.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">description This is the description of an appointment.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">location This is the location of an appointment.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">type This is the type of appointment.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">start This is the start time of an appointment.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">end This is the end time of an appointment.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createdDate This the date that an appointment was created.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createdBy This is who the appointment was created by.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">lastUpdate This is when the appointment was last updated.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">lastUpdatedBy This is who updated the appointment last.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">customerID The is the ID of a customer account.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">userID This is the ID of a user.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">contactID This is a contact's ID.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">Appointments(</span><span class="s0">int </span><span class="s1">appointmentID</span><span class="s0">, </span><span class="s1">String title</span><span class="s0">, </span><span class="s1">String description</span><span class="s0">, </span><span class="s1">String location</span><span class="s0">, </span><span class="s1">String type</span><span class="s0">, </span><span class="s1">LocalDateTime start</span><span class="s0">, </span><span class="s1">LocalDateTime end</span><span class="s0">, </span><span class="s1">LocalDateTime createdDate</span><span class="s0">, </span><span class="s1">String createdBy</span><span class="s0">, </span><span class="s1">Timestamp lastUpdate</span><span class="s0">, </span><span class="s1">String lastUpdatedBy</span><span class="s0">, int </span><span class="s1">customerID</span><span class="s0">, int </span><span class="s1">userID</span><span class="s0">, int </span><span class="s1">contactID) {</span>
+        <span class="s0">this</span><span class="s1">.appointmentID = appointmentID</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.title = title</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.description = description</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.location = location</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.type = type</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.start = start</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.end = end</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.createdDate = createdDate</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.createdBy = createdBy</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.lastUpdate = lastUpdate</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.lastUpdatedBy = lastUpdatedBy</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.customerID = customerID</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.userID = userID</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.contactID = contactID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This is used to retrieve an appointment ID.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns an appointment ID.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public int </span><span class="s1">getAppointmentID() {</span>
+        <span class="s0">return </span><span class="s1">appointmentID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This is used to set an appointments ID.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">appointmentID This is the appointment ID that is used to set an appointment ID.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setAppointmentID(</span><span class="s0">int </span><span class="s1">appointmentID) {</span>
+        <span class="s0">this</span><span class="s1">.appointmentID = appointmentID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">*This method is used to retrieve an appointments title.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns the title of an appointment.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getTitle() {</span>
+        <span class="s0">return </span><span class="s1">title</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method is used to set an appointments title.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">title This is the title of an appointment that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setTitle(String title) {</span>
+        <span class="s0">this</span><span class="s1">.title = title</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method is used to get an appointments description.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns an appointments description.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getDescription() {</span>
+        <span class="s0">return </span><span class="s1">description</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method is used to set the description of an appointment.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">description This is the description that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setDescription(String description) {</span>
+        <span class="s0">this</span><span class="s1">.description = description</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method is used to get the appointment Location.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns the location.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getLocation() {</span>
+        <span class="s0">return </span><span class="s1">location</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method is used to set the location of an appointment</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">location This is the location that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setLocation(String location) {</span>
+        <span class="s0">this</span><span class="s1">.location = location</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* The is the method that is used to retrieve the type of appointment.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is the type of appoinment</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getType() {</span>
+        <span class="s0">return </span><span class="s1">type</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method is used to set the type of an appointment.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">type This is the type of appointment that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setType(String type) {</span>
+        <span class="s0">this</span><span class="s1">.type = type</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method is used to retrieve the start time of an appointment.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is the start time variable that is being retrieved.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">LocalDateTime getStart() {</span>
+        <span class="s0">return </span><span class="s1">start</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method is used to set the start time of an appointment.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">start This is the start time of an appointments that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setStart(LocalDateTime start) {</span>
+        <span class="s0">this</span><span class="s1">.start = start</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method is used to get the end time of an appointment.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is the end time of an appointment that is being returned.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">LocalDateTime getEnd() {</span>
+        <span class="s0">return </span><span class="s1">end</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets the end time of an appointment.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">end This is the end time of an appointment that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setEnd(LocalDateTime end) {</span>
+        <span class="s0">this</span><span class="s1">.end = end</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method is used to get the created day of an appointment.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is the created date of an appointment that is being returned.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">LocalDateTime getCreatedDate() {</span>
+        <span class="s0">return </span><span class="s1">createdDate</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets the created date of an appointment.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createdDate This is the created date of an appointment that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setCreatedDate(LocalDateTime createdDate) {</span>
+        <span class="s0">this</span><span class="s1">.createdDate = createdDate</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method is used to get the user info of who created the appointment.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is the user info of who created the appointment.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getCreatedBy() {</span>
+        <span class="s0">return </span><span class="s1">createdBy</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets who created the appointment.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createdBy This variable represents who created the appointment.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setCreatedBy(String createdBy) {</span>
+        <span class="s0">this</span><span class="s1">.createdBy = createdBy</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets the timestamp of when the appointment was last updated.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns the timestamp of when the appointment was last updated.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">Timestamp getLastUpdate() {</span>
+        <span class="s0">return </span><span class="s1">lastUpdate</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets a timestamp of when the appointment was last updated.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">lastUpdate This is the timestamp being set of when the appointment was last updated.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setLastUpdate(Timestamp lastUpdate) {</span>
+        <span class="s0">this</span><span class="s1">.lastUpdate = lastUpdate</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets the user info of the user who last updated the appointment.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns who last updated the appointment.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getLastUpdatedBy() {</span>
+        <span class="s0">return </span><span class="s1">lastUpdatedBy</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets the user info of the user who last updated the appointment.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">lastUpdatedBy This is the user info of the user who last updated the appointment.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setLastUpdatedBy(String lastUpdatedBy) {</span>
+        <span class="s0">this</span><span class="s1">.lastUpdatedBy = lastUpdatedBy</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets the customer ID of a customer.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is the customer ID of the customer's record.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public int </span><span class="s1">getCustomerID() {</span>
+        <span class="s0">return </span><span class="s1">customerID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method set the customer ID of a customer.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">customerID This is the variable that is set as the customer's ID.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setCustomerID(</span><span class="s0">int </span><span class="s1">customerID) {</span>
+        <span class="s0">this</span><span class="s1">.customerID = customerID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets a user's ID.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is the user ID that is returned.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public int </span><span class="s1">getUserID() {</span>
+        <span class="s0">return </span><span class="s1">userID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets a user's ID.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">userID This is the user ID that is set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setUserID(</span><span class="s0">int </span><span class="s1">userID) {</span>
+        <span class="s0">this</span><span class="s1">.userID = userID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets the contact's ID.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is the contact's ID that is returned.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public int </span><span class="s1">getContactID() {</span>
+        <span class="s0">return </span><span class="s1">contactID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets a contact's ID.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">contactID This the ID of the contact that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setContactID(</span><span class="s0">int </span><span class="s1">contactID) {</span>
+        <span class="s0">this</span><span class="s1">.contactID = contactID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

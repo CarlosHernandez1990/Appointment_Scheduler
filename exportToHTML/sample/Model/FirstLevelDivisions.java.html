@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>FirstLevelDivisions.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #629755; font-weight: bold; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+FirstLevelDivisions.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">sample.Model</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.sql.Timestamp</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.time.LocalDateTime</span><span class="s0">;</span>
+
+<span class="s2">/**</span>
+ <span class="s2">* This class contains methods and variables that compose the first level division class.</span>
+ <span class="s2">*/</span>
+
+<span class="s0">public class </span><span class="s1">FirstLevelDivisions{</span>
+   <span class="s0">int </span><span class="s1">divisionId</span><span class="s0">;</span>
+   <span class="s1">String division</span><span class="s0">;</span>
+   <span class="s1">LocalDateTime createDate</span><span class="s0">;</span>
+   <span class="s1">String createdBy</span><span class="s0">;</span>
+   <span class="s1">Timestamp lastUpdate</span><span class="s0">;</span>
+   <span class="s1">String lastUpdatedBy</span><span class="s0">;</span>
+   <span class="s0">int </span><span class="s1">countryID</span><span class="s0">;</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This is the first level division constructor.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">divisionId This is the ID of the first level division.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">division This is the name of the first level division.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createDate This is when the first level division was created.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createdBy This is who created a specific first level division.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">lastUpdate This is the last update made on a first level division.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">lastUpdatedBy This is who last updated a first level division.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">countryID This is the country ID that pertains to a first level division.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">FirstLevelDivisions(</span><span class="s0">int </span><span class="s1">divisionId</span><span class="s0">, </span><span class="s1">String division</span><span class="s0">, </span><span class="s1">LocalDateTime createDate</span><span class="s0">, </span><span class="s1">String createdBy</span><span class="s0">, </span><span class="s1">Timestamp lastUpdate</span><span class="s0">, </span><span class="s1">String lastUpdatedBy</span><span class="s0">, int </span><span class="s1">countryID) {</span>
+        <span class="s0">this</span><span class="s1">.divisionId = divisionId</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.division = division</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.createDate = createDate</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.createdBy = createdBy</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.lastUpdate = lastUpdate</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.lastUpdatedBy = lastUpdatedBy</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.countryID = countryID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets the ID of a first level division.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is the first level division ID that is being returned.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public int </span><span class="s1">getDivisionId() {</span>
+        <span class="s0">return </span><span class="s1">divisionId</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* The method sets the ID of a first level division.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">divisionId This is the ID being set for a first level division.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setDivisionId(</span><span class="s0">int </span><span class="s1">divisionId) {</span>
+        <span class="s0">this</span><span class="s1">.divisionId = divisionId</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets the division name of a first level division.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This the name of a first level division being returned.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getDivision() {</span>
+        <span class="s0">return </span><span class="s1">division</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets the division name of first level division.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">division This is the division name of a first level division that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setDivision(String division) {</span>
+        <span class="s0">this</span><span class="s1">.division = division</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets the created date of a first level division.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is the created date of a first level division that is being returned.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">LocalDateTime getCreateDate() {</span>
+        <span class="s0">return </span><span class="s1">createDate</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets the creation date of first level division.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createDate This is the creation date of a first level division that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setCreateDate(LocalDateTime createDate) {</span>
+        <span class="s0">this</span><span class="s1">.createDate = createDate</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets who created a first level division.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is who created a first level division that is being returned.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getCreatedBy() {</span>
+        <span class="s0">return </span><span class="s1">createdBy</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets who created the first level division.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createdBy This is who created the first level division that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setCreatedBy(String createdBy) {</span>
+        <span class="s0">this</span><span class="s1">.createdBy = createdBy</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets a timestamp of when a first level division was created.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns the timestamp of when the first level division was created.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">Timestamp getLastUpdate() {</span>
+        <span class="s0">return </span><span class="s1">lastUpdate</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets when the last update of a first level division occurred.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">lastUpdate This is the timestamp of the last update on a first level division that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setLastUpdate(Timestamp lastUpdate) {</span>
+        <span class="s0">this</span><span class="s1">.lastUpdate = lastUpdate</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets who last updated a first level division.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is who created a first level division that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getLastUpdatedBy() {</span>
+        <span class="s0">return </span><span class="s1">lastUpdatedBy</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets who last updated a first level division.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">lastUpdatedBy This is who last updated a first level division that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setLastUpdatedBy(String lastUpdatedBy) {</span>
+        <span class="s0">this</span><span class="s1">.lastUpdatedBy = lastUpdatedBy</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets a country ID from a first level division.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is the country ID that is related to a first level division that is being returned.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public int </span><span class="s1">getCountryID() {</span>
+        <span class="s0">return </span><span class="s1">countryID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets a country ID of a first level division.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">countryID This is the country ID of a first level division that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setCountryID(</span><span class="s0">int </span><span class="s1">countryID) {</span>
+        <span class="s0">this</span><span class="s1">.countryID = countryID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

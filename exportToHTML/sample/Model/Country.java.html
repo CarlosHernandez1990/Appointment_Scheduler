@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>Country.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #629755; font-weight: bold; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Country.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">sample.Model</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.sql.*</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.time.LocalDateTime</span><span class="s0">;</span>
+
+<span class="s2">/**</span>
+ <span class="s2">* This class contains all methods and variables that manage the country class.</span>
+ <span class="s2">*/</span>
+<span class="s0">public class </span><span class="s1">Country {</span>
+    <span class="s0">int </span><span class="s1">countryId</span><span class="s0">;</span>
+    <span class="s1">String countryName</span><span class="s0">;</span>
+    <span class="s1">LocalDateTime createDate</span><span class="s0">;</span>
+    <span class="s1">String createdBy</span><span class="s0">;</span>
+    <span class="s1">Timestamp Last_Update</span><span class="s0">;</span>
+    <span class="s1">String Last_Updated_by</span><span class="s0">;</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This is the constructor of the country class.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">countryId This represents to country's ID.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">countryName This is the name of the country.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createDate This is the date of when the country record is created.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createdBy This is who created the country record.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">last_Update This is when the country date was last updated.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">last_Updated_by This is who last updated the country date.</span>
+     <span class="s2">*/</span>
+    <span class="s0">public </span><span class="s1">Country(</span><span class="s0">int </span><span class="s1">countryId</span><span class="s0">, </span><span class="s1">String countryName</span><span class="s0">, </span><span class="s1">LocalDateTime createDate</span><span class="s0">, </span><span class="s1">String createdBy</span><span class="s0">, </span><span class="s1">Timestamp last_Update</span><span class="s0">, </span><span class="s1">String last_Updated_by) {</span>
+        <span class="s0">this</span><span class="s1">.countryId = countryId</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.countryName = countryName</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.createDate = createDate</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.createdBy = createdBy</span><span class="s0">;</span>
+        <span class="s1">Last_Update = last_Update</span><span class="s0">;</span>
+        <span class="s1">Last_Updated_by = last_Updated_by</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets a country's ID.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is the country ID that is being returned.</span>
+     <span class="s2">*/</span>
+    <span class="s0">public int </span><span class="s1">getCountryId() {</span>
+        <span class="s0">return </span><span class="s1">countryId</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets the ID field of a country</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">countryId This is the country ID that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setCountryId(</span><span class="s0">int </span><span class="s1">countryId) {</span>
+        <span class="s0">this</span><span class="s1">.countryId = countryId</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets the name of a country.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is the county's name that is being returned.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getCountryName() {</span>
+        <span class="s0">return </span><span class="s1">countryName</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This is the method that sets a country's name in the database.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">countryName This is the country name that is being returned.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setCountryName(String countryName) {</span>
+        <span class="s0">this</span><span class="s1">.countryName = countryName</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets the date of when the country's record was created.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns the country's record created date.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">LocalDateTime getCreateDate() {</span>
+        <span class="s0">return </span><span class="s1">createDate</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets the time of when a country record was created.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createDate This is the value of creation date that is being passed to the method.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setCreateDate(LocalDateTime createDate) {</span>
+        <span class="s0">this</span><span class="s1">.createDate = createDate</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets the user info of who created the country's record.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is who created a country record.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getCreatedBy() {</span>
+        <span class="s0">return </span><span class="s1">createdBy</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets who created the country's record.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createdBy This is the user who created a country's record that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setCreatedBy(String createdBy) {</span>
+        <span class="s0">this</span><span class="s1">.createdBy = createdBy</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets a timestamp of when the country's record was last updated.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns a timestamp of when record was last updated.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">Timestamp getLast_Update() {</span>
+        <span class="s0">return </span><span class="s1">Last_Update</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets a timestamp of when a country's record was latst updated.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">last_Update This when the country's record was last updated.</span>
+     <span class="s2">*/</span>
+    <span class="s0">public void </span><span class="s1">setLast_Update(Timestamp last_Update) {</span>
+        <span class="s1">Last_Update = last_Update</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets who last updated a country's record.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns who last updated a country's record.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getLast_Updated_by() {</span>
+        <span class="s0">return </span><span class="s1">Last_Updated_by</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets who last updated a country's record.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">last_Updated_by This is the variable being set of who last updated a country's record.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setLast_Updated_by(String last_Updated_by) {</span>
+        <span class="s1">Last_Updated_by = last_Updated_by</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="563.0" prefWidth="680.0" style="-fx-background-color: lightcyan;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.UpdateAppointmentController">
+   <children>
+      <VBox layoutX="151.0" layoutY="218.0" spacing="20.0">
+         <children>
+            <TextField fx:id="title" />
+            <TextField fx:id="local" />
+            <ComboBox fx:id="contactName" onAction="#contactHandler" prefHeight="25.0" prefWidth="174.0" />
+            <TextField fx:id="contactID" disable="true" editable="false" />
+            <DatePicker fx:id="startTimeDate" />
+            <HBox>
+               <children>
+                  <ComboBox fx:id="startComboH" prefHeight="25.0" prefWidth="87.0" />
+                  <ComboBox fx:id="startComboM" prefHeight="25.0" prefWidth="87.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="13.0" layoutY="218.0" prefHeight="295.0" prefWidth="118.0" spacing="20.0">
+         <children>
+            <Label text="Title">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Location">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Contact Name">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Contact ID">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Date">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Start Time">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="343.0" layoutY="218.0" prefHeight="295.0" prefWidth="133.0" spacing="20.0">
+         <children>
+            <Label text="Description">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Type">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Customer Name">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Customer ID">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="User ID">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="End Time">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="480.0" layoutY="218.0" spacing="20.0">
+         <children>
+            <TextField fx:id="description" />
+            <TextField fx:id="type" />
+            <ComboBox fx:id="customersName" onAction="#customerHandler" prefHeight="25.0" prefWidth="174.0" />
+            <TextField fx:id="customerIDShow" disable="true" editable="false" />
+            <ComboBox fx:id="userID" prefHeight="25.0" prefWidth="174.0" />
+            <HBox>
+               <children>
+                  <ComboBox fx:id="endComboH" prefHeight="25.0" prefWidth="87.0" />
+                  <ComboBox fx:id="endComboM" prefHeight="25.0" prefWidth="87.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button fx:id="exit" layoutX="556.0" layoutY="487.0" mnemonicParsing="false" onAction="#exitHandler" text="Exit">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="save" layoutX="480.0" layoutY="487.0" mnemonicParsing="false" onAction="#saveHandler" text="Save">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <AnchorPane layoutX="5.0" layoutY="72.0" prefHeight="114.0" prefWidth="670.0" style="-fx-background-color: DarkTurquoise; -fx-background-radius: 15;">
+         <children>
+            <TextField fx:id="appointmentID" disable="true" layoutX="152.0" layoutY="22.0" prefHeight="25.0" prefWidth="174.0" />
+            <Label layoutX="16.0" layoutY="22.0" text="Appointment ID">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="appointmentStart" disable="true" layoutX="482.0" layoutY="22.0" prefHeight="25.0" prefWidth="174.0" />
+            <TextField fx:id="appointmentEnd" disable="true" layoutX="482.0" layoutY="68.0" prefHeight="25.0" prefWidth="174.0" />
+            <Label layoutX="346.0" layoutY="22.0" text="Appointment Start">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="346.0" layoutY="68.0" text="Appointment End">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="250.0" layoutY="24.0" text="Update Appointment">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

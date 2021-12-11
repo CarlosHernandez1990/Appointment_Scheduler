@@ -1,0 +1,247 @@
+<html>
+<head>
+<title>Customers.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #629755; font-weight: bold; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Customers.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">sample.Model</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.sql.Date</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.sql.Timestamp</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.time.LocalDateTime</span><span class="s0">;</span>
+
+<span class="s2">/**</span>
+ <span class="s2">* This class contains methods and variables that compose the customers class.</span>
+ <span class="s2">*/</span>
+
+<span class="s0">public class </span><span class="s1">Customers {</span>
+    <span class="s0">int </span><span class="s1">customer_ID</span><span class="s0">;</span>
+    <span class="s1">String customer_name</span><span class="s0">;</span>
+    <span class="s1">String address</span><span class="s0">;</span>
+    <span class="s1">String postal_Code</span><span class="s0">;</span>
+    <span class="s1">String phone</span><span class="s0">;</span>
+    <span class="s1">LocalDateTime createDate</span><span class="s0">;</span>
+    <span class="s1">String createdBy</span><span class="s0">;</span>
+    <span class="s1">Timestamp lastUpdate</span><span class="s0">;</span>
+    <span class="s1">String lastUpdatedBy</span><span class="s0">;</span>
+    <span class="s0">int </span><span class="s1">divisionID</span><span class="s0">;</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This is the constructor of the customers class.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">customer_ID This is the ID of a customer.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">customer_name This is the name of a customer.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">address This is the address of a customer.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">postal_Code This is the postal code of a customer.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">phone This is the phone number of a customer.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createDate This is when the customer record was created.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createdBy This who created the customer record.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">lastUpdate This is when the customer record was last updated.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">lastUpdatedBy This is who last updated the customer record.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">divisionID This is the division where the customer resides in.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">Customers(</span><span class="s0">int </span><span class="s1">customer_ID</span><span class="s0">, </span><span class="s1">String customer_name</span><span class="s0">, </span><span class="s1">String address</span><span class="s0">, </span><span class="s1">String postal_Code</span><span class="s0">, </span><span class="s1">String phone</span><span class="s0">, </span><span class="s1">LocalDateTime createDate</span><span class="s0">, </span><span class="s1">String createdBy</span><span class="s0">, </span><span class="s1">Timestamp lastUpdate</span><span class="s0">, </span><span class="s1">String lastUpdatedBy</span><span class="s0">, int </span><span class="s1">divisionID) {</span>
+        <span class="s0">this</span><span class="s1">.customer_ID = customer_ID</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.customer_name = customer_name</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.address = address</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.postal_Code = postal_Code</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.phone = phone</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.createDate = createDate</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.createdBy = createdBy</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.lastUpdate = lastUpdate</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.lastUpdatedBy = lastUpdatedBy</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.divisionID = divisionID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets the customer's ID.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns the customers ID.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public int </span><span class="s1">getCustomer_ID() {</span>
+        <span class="s0">return </span><span class="s1">customer_ID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets a customers ID.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">customer_ID This is the customer ID that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setCustomer_ID(</span><span class="s0">int </span><span class="s1">customer_ID) {</span>
+        <span class="s0">this</span><span class="s1">.customer_ID = customer_ID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets a customers name.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns a customers name.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getCustomer_name() {</span>
+        <span class="s0">return </span><span class="s1">customer_name</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This sets a customers name.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">customer_name This is the customer name that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setCustomer_name(String customer_name) {</span>
+        <span class="s0">this</span><span class="s1">.customer_name = customer_name</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets the address of a customer record.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This will return the address of a customer.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getAddress() {</span>
+        <span class="s0">return </span><span class="s1">address</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets a customer's address.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">address This is the address of a customer that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setAddress(String address) {</span>
+        <span class="s0">this</span><span class="s1">.address = address</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets the postal code of a customer record.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns a postal code.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getPostal_Code() {</span>
+        <span class="s0">return </span><span class="s1">postal_Code</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets a customer's postal code.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">postal_Code This is the postal code that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setPostal_Code(String postal_Code) {</span>
+        <span class="s0">this</span><span class="s1">.postal_Code = postal_Code</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets a customer's phone number.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns a customer's phone number.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getPhone() {</span>
+        <span class="s0">return </span><span class="s1">phone</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets a customer's phone number.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">phone This is the phone number of a customer's record that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setPhone(String phone) {</span>
+        <span class="s0">this</span><span class="s1">.phone = phone</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets the created date of a customer's record.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns the created date of a customer's record.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">LocalDateTime getCreateDate() {</span>
+        <span class="s0">return </span><span class="s1">createDate</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets the date of creation of a customer's record.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createDate This is the created date of a customer's record that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setCreateDate(LocalDateTime createDate) {</span>
+        <span class="s0">this</span><span class="s1">.createDate = createDate</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method finds out who created a customer's record.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This returns who created the customer's record.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getCreatedBy() {</span>
+        <span class="s0">return </span><span class="s1">createdBy</span><span class="s0">; </span><span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">*This method sets who created a customer's record.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">createdBy This is who is being set as the creator of customer's record.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setCreatedBy(String createdBy) {</span>
+        <span class="s0">this</span><span class="s1">.createdBy = createdBy</span><span class="s0">; </span><span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets when the last update to a customer's record occurred.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is when the last update to a customer's record occurred.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">Timestamp getLastUpdate() {</span>
+        <span class="s0">return </span><span class="s1">lastUpdate</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets when a customer's record was last updated.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">lastUpdate This is a timestamp of when a customer's record was last updated by.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setLastUpdate(Timestamp lastUpdate) {</span>
+        <span class="s0">this</span><span class="s1">.lastUpdate = lastUpdate</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets who last updated a customer's record.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This who updated a customer's record last.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public </span><span class="s1">String getLastUpdatedBy() {</span>
+        <span class="s0">return </span><span class="s1">lastUpdatedBy</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets who last updated a customer's record.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">lastUpdatedBy This is who updated a customer's record last that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setLastUpdatedBy(String lastUpdatedBy) {</span>
+        <span class="s0">this</span><span class="s1">.lastUpdatedBy = lastUpdatedBy</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method gets a customer's division ID that they reside in.</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">This is the division ID of where a customer resides that is being returned.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public int </span><span class="s1">getDivisionID() {</span>
+        <span class="s0">return </span><span class="s1">divisionID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* This method sets a division ID of customer record.</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">divisionID This is the division ID that is being set.</span>
+     <span class="s2">*/</span>
+
+    <span class="s0">public void </span><span class="s1">setDivisionID(</span><span class="s0">int </span><span class="s1">divisionID) {</span>
+        <span class="s0">this</span><span class="s1">.divisionID = divisionID</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

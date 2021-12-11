@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="709.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.ViewReportsController">
+   <children>
+      <AnchorPane layoutX="41.0" layoutY="119.0" prefHeight="242.0" prefWidth="776.0" style="-fx-background-color: grey; -fx-border-color: black; -fx-border-width: 5; -fx-background-radius: 10; -fx-border-radius: 10;">
+         <children>
+            <TableView fx:id="monthTable" layoutX="53.0" layoutY="60.0" prefHeight="122.0" prefWidth="294.0">
+               <columns>
+                  <TableColumn fx:id="monthCol" prefWidth="75.0" text="Month" />
+                  <TableColumn fx:id="type" prefWidth="141.0" text="type" />
+                  <TableColumn fx:id="monthCountCol" prefWidth="77.0" text="Count" />
+               </columns>
+            </TableView>
+            <TableView fx:id="locationTable" layoutX="411.0" layoutY="57.0" prefHeight="122.0" prefWidth="294.0">
+              <columns>
+                  <TableColumn fx:id="locationCol" prefWidth="75.0" text="Country" />
+                 <TableColumn fx:id="divisionCol" prefWidth="122.0" text="Division" />
+                 <TableColumn fx:id="countCol" prefWidth="79.0" text="Count" />
+              </columns>
+            </TableView>
+            <Label layoutX="95.0" layoutY="22.0" text="Appointments By Month" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="453.0" layoutY="22.0" text="Appointments By Location" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="scheduleTable" layoutX="41.0" layoutY="419.0" prefHeight="200.0" prefWidth="776.0">
+         <columns>
+            <TableColumn fx:id="aIdCol" prefWidth="98.0" text="Appointment ID" />
+            <TableColumn fx:id="aTitleCol" prefWidth="79.0" text="Title" />
+            <TableColumn fx:id="aTypeCol" prefWidth="77.0" text="Type" />
+            <TableColumn fx:id="aDescriptionCol" prefWidth="75.0" text="Description" />
+            <TableColumn fx:id="aStartCol" prefWidth="131.0" text="Start" />
+            <TableColumn fx:id="aEndCol" minWidth="0.0" prefWidth="131.0" text="End" />
+            <TableColumn fx:id="aCustomerIdCol" minWidth="0.0" prefWidth="79.0" text="Customer ID" />
+            <TableColumn fx:id="aContactIdCol" minWidth="0.0" prefWidth="104.0" text="Contact ID" />
+         </columns>
+      </TableView>
+      <Button fx:id="mainButton" layoutX="671.0" layoutY="641.0" mnemonicParsing="false" onAction="#mainHandler" text="Main">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="exitButton" layoutX="770.0" layoutY="641.0" mnemonicParsing="false" onAction="#exitHandler" text="Exit">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="331.0" layoutY="390.0" text="Contact Schedule">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="310.0" layoutY="84.0" text="Appointment Reports">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="232.0" text="Reports and Scheduling">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="contactName" layoutX="712.0" layoutY="395.0" onAction="#contactHandler" prefHeight="25.0" prefWidth="105.0" promptText="Contact ID" />
+   </children>
+</AnchorPane>
